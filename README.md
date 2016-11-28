@@ -4,14 +4,19 @@ Beaker CLI tool.
 Clone, fork, develop, and publish P2P sites.
 (Packaged with Beaker.)
 
-## Usage
+## Installation
 
 Start [beaker](/beakerbrowser/beaker).
-If you haven't yet installed bkr, go to the settings page ([beaker:settings](beaker:settings)) and click "Install bkr".
+Go to the settings page ([beaker:settings](beaker:settings)) and click "Install bkr".
+It will need to ask for your system password, so that it can add the binary to your bin path.
+
+**(This is not yet implemented in Beaker, but it will be the procedure.)**
+
+## Usage
 
 Command overview:
 
-```
+```bash
 # show the status of the site, including changed files
 bkr status [directory]
 
@@ -45,7 +50,7 @@ If there are no collisions, Dat will use the closest match.
 
 ### Create a site
 
-```
+```bash
 mkdir ~/my-site
 cd ~/my-site
 bkr init
@@ -60,7 +65,7 @@ bkr publish 1.0.1
 When working, use `bkr dev` to create a temporary live-watching site.
 (The site is temporary so that your in-progress changes dont get published out into the network.)
 
-```
+```bash
 cd ~/my-site
 bkr dev 
 
@@ -71,7 +76,7 @@ bkr publish major
 
 ### Fork a site
 
-```
+```bash
 mkdir ~/my-fork
 cd ~/my-fork
 bkr fork dat://0ff7d4c7644d0aa19914247dc5dbf502d6a02ea89a5145e7b178d57db00504cd/
