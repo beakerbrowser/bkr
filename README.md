@@ -46,7 +46,7 @@ Beaker 0.5.0 must be published before bkr will be able to connect to it.
 Implemented commands:
 
 - [x] init
-- [ ] co
+- [x] co
 - [ ] fork
 - [ ] status
 - [ ] pull
