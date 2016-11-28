@@ -226,7 +226,7 @@ bkr host <dat-link|dat-ref>
 Serve the given site to the network.
 You must add the site before hosting it.
 
-### Unost
+### Unhost
 
 ```
 bkr unhost <dat-link|dat-ref>
