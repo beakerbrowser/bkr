@@ -40,6 +40,11 @@ Like in Git, you can use a shortened version of a dat's hex URL.
 If there are no collisions, bkr will use the closest match.
 (This only works in the commands that accept a `dat-ref`.)
 
+Unlike Git, bkr is not a source-control system.
+It is more similar to NPM; it publishes sites to the dat p2p network.
+It can not diff versions of a site, or help you merge them together.
+We suggest you use it with git.
+
 ## Examples
 
 ### Create a site
