@@ -4,13 +4,11 @@ Beaker CLI tool.
 Clone, fork, develop, and publish P2P sites.
 (Packaged with Beaker.)
 
-## Installation
+```
+npm install -g bkr
+```
 
-Start [beaker](https://github.com/beakerbrowser/beaker).
-Go to the settings page ([beaker:settings](beaker:settings)) and click "Install bkr".
-It will need to ask for your system password, so that it can add the binary to your bin path.
-
-**(This is not yet implemented in Beaker, but it will be the procedure.)**
+Requires [beaker](https://github.com/beakerbrowser/beaker) to be running.
 
 ## Usage
 
