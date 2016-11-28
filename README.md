@@ -2,7 +2,6 @@
 
 Beaker CLI tool.
 Clone, fork, develop, and publish P2P sites.
-(Packaged with Beaker.)
 
 ```
 npm install -g bkr
