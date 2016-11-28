@@ -40,8 +40,10 @@
     "chalk": "1.1.3",
     "fs-promise": "1.0.0",
     "gulp-chmod": "^2.0.0",
+    "inquirer": "^1.2.3",
     "jayson": "^2.0.2",
-    "subcommand": "^2.0.4"
+    "subcommand": "^2.0.4",
+    "username": "^2.2.2"
   },
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "6.16.0",

@@ -43,15 +43,37 @@ We suggest you use it with git!
 ### Create a site
 
 ```bash
-mkdir ~/my-site
-cd ~/my-site
-bkr init
+$ mkdir ~/my-site
+$ cd ~/my-site
+$ bkr init
 
-echo "Hello, world!" > index.html
-bkr publish 1.0.0
+Initializing /Users/bob/my-site
 
-echo "<br><br>Goodbye, world!" >> index.html
-bkr publish 1.0.1
+This utility will walk you through creating a dat.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+? title: my-site
+? description: My new site
+? author: Bob Roberts
+
+About to write /Users/bob/my-site/dat.json
+
+{
+  "title": "my-site",
+  "description": "My new site",
+  "author": "Bob Roberts"
+} 
+
+? Is this ok? Yes
+
+Created new dat
+dat://110382ee22c3fd6a853c3e83d930904ceaa9aa51859c82da6a918b69371f51db/
+
+$ echo "Hello, world!" > index.html
+$ bkr publish 1.0.0
+
+$ echo "<br><br>Goodbye, world!" >> index.html
+$ bkr publish 1.0.1
 ```
 
 ### Work on a site
@@ -60,22 +82,22 @@ When working, use `bkr dev` to create a temporary live-watching site.
 (The site is temporary so that your in-progress changes dont get published out into the network.)
 
 ```bash
-cd ~/my-site
-bkr dev 
+$ cd ~/my-site
+$ bkr dev 
 
 # after the work is done...
 
-bkr publish major
+$ bkr publish major
 ```
 
 ### Fork a site
 
 ```bash
-bkr fork dat://0ff7d4c7644d0aa19914247dc5dbf502d6a02ea89a5145e7b178d57db00504cd/ ~/my-fork
-cd ~/my-fork
+$ bkr fork dat://0ff7d4c7644d0aa19914247dc5dbf502d6a02ea89a5145e7b178d57db00504cd/ ~/my-fork
+$ cd ~/my-fork
 
-echo "My fork has no regard for the previous index.html" > index.html
-bkr publish 1.0.0
+$ echo "My fork has no regard for the previous index.html" > index.html
+$ bkr publish 1.0.0
 ```
 
 ## Reference

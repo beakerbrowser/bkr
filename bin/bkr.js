@@ -39,8 +39,7 @@ var commands = [
 ].map(errorHandler.wrapCommand)
 
 // match & run the command
-var defaults = [{ name: 'dir', default: process.cwd() }]
-var match = subcommand({ commands, none, defaults })
+var match = subcommand({ commands, none })
 match(process.argv.slice(2))
 
 function none (args) {
