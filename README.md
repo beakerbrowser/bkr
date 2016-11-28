@@ -47,7 +47,7 @@ Implemented commands:
 
 - [x] init
 - [x] co
-- [ ] fork
+- [x] fork
 - [ ] status
 - [ ] pull
 - [ ] publish
