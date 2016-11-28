@@ -17,21 +17,15 @@ It will need to ask for your system password, so that it can add the binary to y
 Command overview:
 
 ```bash
-# show the status of the site, including changed files
-bkr status [directory]
-
-# initiate a dat site in the given directory
+# initiate a dat site
 bkr init [directory]
 bkr co <dat-link> [directory]
 bkr fork <dat-link|directory> [directory]
 
-# pull updates to the given directory's dat
+# update/manage a site
+bkr status [directory]
 bkr pull [--live] [directory]
-
-# publish updates in the given directory
 bkr publish [major|minor|patch|{version}] [directory]
-
-# create a temporary live-watching dat for development
 bkr dev [directory]
 
 # list/manage saved sites
