@@ -38,6 +38,26 @@ It is for publishing on the dat network, not source-control.
 It can not diff versions of a site, or help you merge them together.
 We suggest you use it with git!
 
+## Development Status
+
+**Currently will not work.**
+Beaker 0.5.0 must be published before bkr will be able to connect to it.
+
+Implemented commands:
+
+- [x] init
+- [ ] co
+- [ ] fork
+- [ ] status
+- [ ] pull
+- [ ] publish
+- [ ] dev
+- [x] ls
+- [ ] add
+- [ ] rm
+- [ ] host
+- [ ] unhost
+
 ## Examples
 
 ### Create a site
