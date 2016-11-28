@@ -6,7 +6,7 @@ Clone, fork, develop, and publish P2P sites.
 
 ## Installation
 
-Start [beaker](/beakerbrowser/beaker).
+Start [beaker](https://github.com/beakerbrowser/beaker).
 Go to the settings page ([beaker:settings](beaker:settings)) and click "Install bkr".
 It will need to ask for your system password, so that it can add the binary to your bin path.
 
