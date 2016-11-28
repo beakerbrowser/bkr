@@ -16,8 +16,8 @@ Command overview:
 ```bash
 # initiate a dat site
 bkr init [directory]
-bkr co <dat-link> [directory]
-bkr fork <dat-link|directory> [directory]
+bkr co <dat-url> [directory]
+bkr fork <dat-url|directory> [directory]
 
 # update/manage a site
 bkr status [directory]
@@ -27,20 +27,16 @@ bkr dev [directory]
 
 # list/manage saved sites
 bkr ls [--mine]
-bkr add <dat-link|dat-ref>
-bkr rm <dat-link|dat-ref>
-bkr host <dat-link|dat-ref>
-bkr unhost <dat-link|dat-ref>
+bkr add <dat-url>
+bkr rm <dat-url>
+bkr host <dat-url>
+bkr unhost <dat-url>
 ```
 
-Like in Git, you can use a shortened version of a dat's hex URL.
-If there are no collisions, bkr will use the closest match.
-(This only works in the commands that accept a `dat-ref`.)
-
-Unlike Git, bkr is not a source-control system.
-It is more similar to NPM; it publishes sites to the dat p2p network.
+Bkr is more like NPM than Git.
+It is for publishing on the dat network, not source-control.
 It can not diff versions of a site, or help you merge them together.
-We suggest you use it with git.
+We suggest you use it with git!
 
 ## Examples
 
@@ -117,7 +113,7 @@ Effects:
 ### Checkout
 
 ```
-bkr co <dat-link> [directory]
+bkr co <dat-url> [directory]
 ```
 
 Check out a copy of a dat site into the given directory.
@@ -129,10 +125,10 @@ You can publish your changes with the `publish` command.
 ### Fork
 
 ```
-bkr fork <dat-link|directory> [directory]
+bkr fork <dat-url|directory> [directory]
 ```
 
-Create a new dat site, using the given dat-link or directory as a template.
+Create a new dat site, using the given dat-url or directory as a template.
 This is similar to running `bkr co`, deleting the `dat.json`, then running `bkr init`.
 
 If no second directory is given, it will use the current directory.
@@ -206,7 +202,7 @@ To only show the sites you own, use `--mine`.
 ### Add
 
 ```
-bkr add <dat-link|dat-ref>
+bkr add <dat-url>
 ```
 
 Add a site to your saved sites in Beaker.
@@ -215,7 +211,7 @@ Beaker will start looking for the site on the network immediately.
 ### Remove
 
 ```
-bkr rm <dat-link|dat-ref>
+bkr rm <dat-url>
 ```
 
 Remove a site to your saved sites in Beaker.
@@ -224,7 +220,7 @@ Beaker will garbage-collect the data later.
 ### Host
 
 ```
-bkr host <dat-link|dat-ref>
+bkr host <dat-url>
 ```
 
 Serve the given site to the network.
@@ -233,7 +229,7 @@ You must add the site before hosting it.
 ### Unhost
 
 ```
-bkr unhost <dat-link|dat-ref>
+bkr unhost <dat-url>
 ```
 
 Stop serving the given site to the network.
