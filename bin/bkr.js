@@ -16,25 +16,30 @@ import rmCmd from '../lib/commands/rm'
 import hostCmd from '../lib/commands/host'
 import unhostCmd from '../lib/commands/unhost'
 
-var match = subcommand({
-  commands: [
-    initCmd,
-    coCmd,
-    forkCmd,
-    statusCmd,
-    pullCmd,
-    publishCmd,
-    devCmd,
-    lsCmd,
-    addCmd,
-    rmCmd,
-    hostCmd,
-    unhostCmd
-  ],
-  none
-})
-match(process.argv.slice(2))
+import * as errorHandler from '../lib/error-handler'
 
+// main
+// =
+
+// wrap all commands with error handling
+var commands = [
+  initCmd,
+  coCmd,
+  forkCmd,
+  statusCmd,
+  pullCmd,
+  publishCmd,
+  devCmd,
+  lsCmd,
+  addCmd,
+  rmCmd,
+  hostCmd,
+  unhostCmd
+].map(errorHandler.wrapCommand)
+
+// match & run the command
+var match = subcommand({ commands, none })
+match(process.argv.slice(2))
 
 function none (args) {
   if (args._[0]) { 
