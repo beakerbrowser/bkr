@@ -36,9 +36,13 @@ var match = subcommand({
 match(process.argv.slice(2))
 
 
-function none () {
-  console.log(
-`Usage: ${chalk.bold(`bkr`)} <command> ${chalk.gray(`[opts...]`)}
+function none (args) {
+  if (args._[0]) { 
+    console.log(chalk.red(`\nInvalid command: ${args._[0]}`))
+  } else {
+    console.log('')
+  }
+  console.log(`Usage: ${chalk.bold(`bkr`)} <command> ${chalk.gray(`[opts...]`)}
 
   ${chalk.bold(`init`)} ${chalk.gray(`[directory]`)}
   ${chalk.bold(`co`)} <dat-link> ${chalk.gray(`[directory]`)}
@@ -58,4 +62,5 @@ function none () {
 
   ${chalk.blue(`Learn more at https://github.com/beakerbrowser/bkr`)}
 `)
+  process.exit(1)
 }
