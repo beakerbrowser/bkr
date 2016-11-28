@@ -37,7 +37,7 @@ bkr unhost <dat-link|dat-ref>
 ```
 
 Like in Git, you can use a shortened version of a dat's hex URL.
-If there are no collisions, Dat will use the closest match.
+If there are no collisions, bkr will use the closest match.
 (This only works in the commands that accept a `dat-ref`.)
 
 ## Examples
@@ -233,3 +233,7 @@ bkr unhost <dat-link|dat-ref>
 ```
 
 Stop serving the given site to the network.
+
+## Ignored Files
+
+By default, `.git` and `.dat` are ignored, and will not be published.
