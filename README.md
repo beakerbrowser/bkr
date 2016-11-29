@@ -53,10 +53,10 @@ Implemented commands:
 - [ ] publish
 - [ ] dev
 - [x] ls
-- [ ] add
-- [ ] rm
-- [ ] host
-- [ ] unhost
+- [x] add
+- [x] rm
+- [x] host
+- [x] unhost
 
 ## Examples
 
