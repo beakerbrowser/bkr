@@ -22,7 +22,7 @@ bkr fork <dat-url|directory> [directory]
 # update/manage a site
 bkr status [directory]
 bkr pull [directory]
-bkr publish [major|minor|patch|{version}] [directory]
+bkr publish <major|minor|patch|{version}> [directory]
 bkr dev [directory]
 
 # list/manage saved sites
@@ -197,7 +197,7 @@ If no directory is provided, it will use the current directory.
 ### Publish
 
 ```
-bkr publish [major|minor|patch|{version}] [directory]
+bkr publish <major|minor|patch|{version}> [directory]
 ```
 
 Publish a new version of the given directory.
