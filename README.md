@@ -50,7 +50,7 @@ Implemented commands:
 - [x] fork
 - [ ] status
 - [x] pull
-- [ ] publish
+- [x] publish
 - [ ] dev
 - [x] ls
 - [x] add
