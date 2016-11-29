@@ -51,7 +51,7 @@ Implemented commands:
 - [ ] status
 - [x] pull
 - [x] publish
-- [ ] dev
+- [x] dev
 - [x] ls
 - [x] add
 - [x] rm
