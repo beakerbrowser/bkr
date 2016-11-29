@@ -21,7 +21,7 @@ bkr fork <dat-url|directory> [directory]
 
 # update/manage a site
 bkr status [directory]
-bkr pull [--live] [directory]
+bkr pull [directory]
 bkr publish [major|minor|patch|{version}] [directory]
 bkr dev [directory]
 
@@ -49,7 +49,7 @@ Implemented commands:
 - [x] co
 - [x] fork
 - [ ] status
-- [ ] pull
+- [x] pull
 - [ ] publish
 - [ ] dev
 - [x] ls
@@ -187,14 +187,12 @@ Effects:
 ### Pull
 
 ```
-bkr pull [--live] [directory]
+bkr pull [directory]
 ```
 
 Pull any recent updates to the dat in the given directory.
 This command will automatically overwrite any changes in the directory.
 If no directory is provided, it will use the current directory.
-
-You can pass `--live` to have updates continuously pulled.
 
 ### Publish
 
