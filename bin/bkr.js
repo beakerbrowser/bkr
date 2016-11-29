@@ -18,11 +18,13 @@ import unhostCmd from '../lib/commands/unhost'
 
 import * as errorHandler from '../lib/error-handler'
 import usage from '../lib/usage'
+import { getClient } from '../lib/client'
+
+const VERSION = 1
 
 // main
 // =
 
-// wrap all commands with error handling
 var commands = [
   initCmd,
   coCmd,
@@ -36,12 +38,38 @@ var commands = [
   rmCmd,
   hostCmd,
   unhostCmd
-].map(errorHandler.wrapCommand)
+].map(wrapCommand)
 
 // match & run the command
 var match = subcommand({ commands, none })
 match(process.argv.slice(2))
 
+// adds a handshake before each command, and nice error output
+function wrapCommand (obj) {
+  var innerCommand = obj.command
+
+  obj.command = async function (...args) {
+    try {
+      await getClient().hello(VERSION)
+      await innerCommand(...args)
+    } catch (err) {
+      if (err.code === 'ECONNREFUSED') {
+        out('Error: Could not connect to Beaker. Is it running?')
+      } else {
+        // generic output
+        out(err)
+      }
+      process.exit(1)
+    }
+  }
+
+  function out (...args) {
+    console.error(chalk.bold.red(...args))  
+  }
+  return obj
+}
+
+// error output when no/invalid command is given
 function none (args) {
   var err = (args._[0]) ? `Invalid command: ${args._[0]}` : false
   usage(err)
