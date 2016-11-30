@@ -8,6 +8,7 @@ npm install -g bkr
 ```
 
 Requires [beaker](https://github.com/beakerbrowser/beaker) to be running.
+Tests are run in the Beaker test-suite.
 
 ## Usage
 
