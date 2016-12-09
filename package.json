@@ -1,6 +1,6 @@
 {
   "name": "bkr",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Beaker CLI tool. Clone, fork, develop, and publish P2P sites.",
   "bin": {
     "bkr": "./build/bin/bkr"
