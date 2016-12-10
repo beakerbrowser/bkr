@@ -22,6 +22,7 @@ bkr fork <dat-url|directory> [directory]
 
 # update/manage a site
 bkr status [directory]
+bkr open [directory]
 bkr pull [directory]
 bkr publish [major|minor|patch|{version}] [directory]
 bkr dev [directory]
@@ -50,6 +51,7 @@ Implemented commands:
 - [x] co
 - [x] fork
 - [ ] status
+- [x] open
 - [x] pull
 - [x] publish
 - [x] dev
@@ -184,6 +186,14 @@ Effects:
  - The new site is hosted on the network.
  - All files from the original site, except dat.json, are copied into the new site.
  - A new dat.json is created.
+
+### Open
+
+```
+bkr open [directory]
+```
+
+View the given dat in your browser.
 
 ### Pull
 

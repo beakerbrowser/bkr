@@ -7,6 +7,7 @@ import initCmd from '../lib/commands/init'
 import coCmd from '../lib/commands/co'
 import forkCmd from '../lib/commands/fork'
 import statusCmd from '../lib/commands/status'
+import openCmd from '../lib/commands/open'
 import pullCmd from '../lib/commands/pull'
 import publishCmd from '../lib/commands/publish'
 import devCmd from '../lib/commands/dev'
@@ -30,6 +31,7 @@ var commands = [
   coCmd,
   forkCmd,
   statusCmd,
+  openCmd,
   pullCmd,
   publishCmd,
   devCmd,
