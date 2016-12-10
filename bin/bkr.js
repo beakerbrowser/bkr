@@ -58,7 +58,7 @@ function wrapCommand (obj) {
     try {
       var beakerVersion = await getClient().hello(BKR_VERSION)
       if (!semver.valid(beakerVersion) || semver.lt(beakerVersion, MIN_BEAKER_VERSION)) {
-        throw `Beaker version is ${beakerVersion} and minimum required is ${MIN_BEAKER_VERSION}. Can you upgrade your browser?`
+        throw `Beaker version is ${beakerVersion} and minimum required is ${MIN_BEAKER_VERSION}. Can you update your browser?`
       }
       await innerCommand(...args)
     } catch (err) {
