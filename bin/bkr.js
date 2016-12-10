@@ -2,6 +2,7 @@
 
 import subcommand from 'subcommand'
 import chalk from 'chalk'
+import semver from 'semver'
 
 import initCmd from '../lib/commands/init'
 import coCmd from '../lib/commands/co'
@@ -21,7 +22,10 @@ import * as errorHandler from '../lib/error-handler'
 import usage from '../lib/usage'
 import { getClient } from '../lib/client'
 
-const VERSION = 1
+import packageJson from '../../package.json'
+
+const BKR_VERSION = packageJson.version
+const MIN_BEAKER_VERSION = '0.5.0'
 
 // main
 // =
@@ -52,7 +56,10 @@ function wrapCommand (obj) {
 
   obj.command = async function (...args) {
     try {
-      await getClient().hello(VERSION)
+      var beakerVersion = await getClient().hello(BKR_VERSION)
+      if (!semver.valid(beakerVersion) || semver.lt(beakerVersion, MIN_BEAKER_VERSION)) {
+        throw `Beaker version is ${beakerVersion} and minimum required is ${MIN_BEAKER_VERSION}. Can you upgrade your browser?`
+      }
       await innerCommand(...args)
     } catch (err) {
       if (err.code === 'ECONNREFUSED') {
