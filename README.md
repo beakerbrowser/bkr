@@ -21,7 +21,7 @@ Publishing:
 
   init [directory] - create a new dat
   status [directory] - check the change status of a dat
-  publish [major|minor|patch|{version}] [directory] - publish a new version of a dat
+  publish [directory] - publish a new version of a dat
 
 Checkouts:
 
@@ -172,24 +172,18 @@ If no directory is provided, it will use the current directory.
 ### Publish
 
 ```
-bkr publish [major|minor|patch|{version}] [directory]
+bkr publish[directory]
 ```
 
 Publish a new version of the given directory.
 Will update the dat site's files with any changes made since the last publish.
 If no directory is provided, it will use the current directory.
 
-If you want to specify a specific version, you can do so, eg `bkr publish 1.2.3`.
-For convenience, you can use major/minor/patch to bump those version segments, respectively.
-
-This command will fail if you attempt to publish a version that has already been published.
 This command will NOT fail if you forgot to pull latest before publishing.
 
 Effects:
 
- - Update the version in dat.json, if a version was specified.
  - Write the new files to the dat site.
- - Write a new checkpoint to the dat site, using the version in dat.json.
 
 ### Dev
 
