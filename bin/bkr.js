@@ -13,10 +13,8 @@ import pullCmd from '../lib/commands/pull'
 import publishCmd from '../lib/commands/publish'
 import devCmd from '../lib/commands/dev'
 import lsCmd from '../lib/commands/ls'
-import addCmd from '../lib/commands/add'
-import rmCmd from '../lib/commands/rm'
-import hostCmd from '../lib/commands/host'
-import unhostCmd from '../lib/commands/unhost'
+import saveCmd from '../lib/commands/save'
+import unsaveCmd from '../lib/commands/unsave'
 
 import * as errorHandler from '../lib/error-handler'
 import usage from '../lib/usage'
@@ -40,10 +38,8 @@ var commands = [
   publishCmd,
   devCmd,
   lsCmd,
-  addCmd,
-  rmCmd,
-  hostCmd,
-  unhostCmd
+  saveCmd,
+  unsaveCmd
 ].map(wrapCommand)
 
 // match & run the command

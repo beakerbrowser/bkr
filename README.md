@@ -15,51 +15,31 @@ Tests are run in the Beaker test-suite.
 Command overview:
 
 ```bash
-# initiate a dat site
-bkr init [directory]
-bkr co <dat-url> [directory]
-bkr fork <dat-url|directory> [directory]
+Usage: bkr <command> [opts...]
 
-# update/manage a site
-bkr status [directory]
-bkr open [directory]
-bkr pull [directory]
-bkr publish [major|minor|patch|{version}] [directory]
-bkr dev [directory]
+Publishing:
 
-# list/manage saved sites
-bkr ls [--mine]
-bkr add <dat-url>
-bkr rm <dat-url>
-bkr host <dat-url>
-bkr unhost <dat-url>
+  init [directory] - create a new dat
+  status [directory] - check the change status of a dat
+  publish [major|minor|patch|{version}] [directory] - publish a new version of a dat
+
+Checkouts:
+
+  co <dat-url> [directory] - checkout a dat
+  fork <dat-url|directory> [directory] - fork and then checkout a dat
+  pull [--live] [directory] - pull the latest version of a dat
+
+Open in beaker:
+
+  open [directory] - open the dat in a folder
+  dev [directory] - create and open a temporary live-watching dat (useful for dev)
+
+Management:
+
+  ls [--mine] - list dats saved in beaker
+  save <dat-url> - save a dat to beaker
+  unsave <dat-url> - unsave a dat from beaker
 ```
-
-Bkr is more like NPM than Git.
-It is for publishing on the dat network, not source-control.
-It can not diff versions of a site, or help you merge them together.
-We suggest you use it with git!
-
-## Development Status
-
-**Currently will not work.**
-Beaker 0.5.0 must be published before bkr will be able to connect to it.
-
-Implemented commands:
-
-- [x] init
-- [x] co
-- [x] fork
-- [ ] status
-- [x] open
-- [x] pull
-- [x] publish
-- [x] dev
-- [x] ls
-- [x] add
-- [x] rm
-- [x] host
-- [x] unhost
 
 ## Examples
 
@@ -70,33 +50,17 @@ $ mkdir ~/my-site
 $ cd ~/my-site
 $ bkr init
 
-Initializing /Users/bob/my-site
-
-This utility will walk you through creating a dat.json file.
-It only covers the most common items, and tries to guess sensible defaults.
-
-? title: my-site
-? description: My new site
-? author: Bob Roberts
-
-About to write /Users/bob/my-site/dat.json
-
-{
-  "title": "my-site",
-  "description": "My new site",
-  "author": "Bob Roberts"
-} 
-
-? Is this ok? Yes
-
-Created new dat
-dat://110382ee22c3fd6a853c3e83d930904ceaa9aa51859c82da6a918b69371f51db/
+# will give you a url, but the site is empty
 
 $ echo "Hello, world!" > index.html
-$ bkr publish 1.0.0
+$ bkr publish
+
+# site now has an index.html
 
 $ echo "<br><br>Goodbye, world!" >> index.html
-$ bkr publish 1.0.1
+$ bkr publish
+
+# site now has a BETTER index.html!
 ```
 
 ### Work on a site
@@ -250,40 +214,24 @@ List the Dat sites you have saved in Beaker.
 
 To only show the sites you own, use `--mine`.
 
-### Add
+### Save
 
 ```
-bkr add <dat-url>
+bkr save <dat-url>
 ```
 
 Add a site to your saved sites in Beaker.
 Beaker will start looking for the site on the network immediately.
 
-### Remove
+### Unsave
 
 ```
-bkr rm <dat-url>
+bkr unsave <dat-url>
 ```
 
 Remove a site to your saved sites in Beaker.
 Beaker will garbage-collect the data later.
 
-### Host
-
-```
-bkr host <dat-url>
-```
-
-Serve the given site to the network.
-You must add the site before hosting it.
-
-### Unhost
-
-```
-bkr unhost <dat-url>
-```
-
-Stop serving the given site to the network.
 
 ## Ignored Files
 
