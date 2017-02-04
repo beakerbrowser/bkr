@@ -87,6 +87,10 @@ $ echo "My fork has no regard for the previous index.html" > index.html
 $ bkr publish 1.0.0
 ```
 
+## .datignore
+
+Similar to .gitignore, you can specify a .datignore file to exclude files from publishing.
+
 ## Reference
 
 ### Status
@@ -180,6 +184,8 @@ Will update the dat site's files with any changes made since the last publish.
 If no directory is provided, it will use the current directory.
 
 This command will NOT fail if you forgot to pull latest before publishing.
+
+Similar to .gitignore, you can specify a .datignore file to exclude files from publishing.
 
 Effects:
 
