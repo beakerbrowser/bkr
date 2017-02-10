@@ -15,24 +15,25 @@ Tests are run in the Beaker test-suite.
 Command overview:
 
 ```bash
+
 Usage: bkr <command> [opts...]
 
 Publishing:
 
   init [directory] - create a new dat
+  fork <dat-url|directory> [directory] - create a new dat by copying
   status [directory] - check the change status of a dat
   publish [directory] - publish a new version of a dat
 
-Checkouts:
+Fetching:
 
-  co <dat-url> [directory] - checkout a dat
-  fork <dat-url|directory> [directory] - fork and then checkout a dat
+  clone <dat-url> [directory] - copy a dat into a dir
   pull [--live] [directory] - pull the latest version of a dat
 
 Open in beaker:
 
   open [directory] - open the dat in a folder
-  dev [directory] - create and open a temporary live-watching dat (useful for dev)
+  dev [directory] - create and open a temporary live-watching dat
 
 Management:
 
@@ -69,6 +70,7 @@ When working, use `bkr dev` to create a temporary live-watching site.
 (The site is temporary so that your in-progress changes dont get published out into the network.)
 
 ```bash
+$ bkr clone dat://0ff7d4c7644d0aa19914247dc5dbf502d6a02ea89a5145e7b178d57db00504cd/ ~/my-site
 $ cd ~/my-site
 $ bkr dev 
 
@@ -123,10 +125,10 @@ Effects:
  - The new site is hosted on the network.
  - A dat.json manifest file is created in the directory.
 
-### Checkout
+### Clone
 
 ```
-bkr co <dat-url> [directory]
+bkr clone <dat-url> [directory]
 ```
 
 Check out a copy of a dat site into the given directory.
@@ -142,7 +144,7 @@ bkr fork <dat-url|directory> [directory]
 ```
 
 Create a new dat site, using the given dat-url or directory as a template.
-This is similar to running `bkr co`, deleting the `dat.json`, then running `bkr init`.
+This is similar to running `bkr clone`, deleting the `dat.json`, then running `bkr init`.
 
 If no second directory is given, it will use the current directory.
 You can fork a checked-out dat site in place by running `bkr fork .`.

@@ -5,7 +5,7 @@ import chalk from 'chalk'
 import semver from 'semver'
 
 import initCmd from '../lib/commands/init'
-import coCmd from '../lib/commands/co'
+import cloneCmd from '../lib/commands/clone'
 import forkCmd from '../lib/commands/fork'
 import statusCmd from '../lib/commands/status'
 import openCmd from '../lib/commands/open'
@@ -30,7 +30,7 @@ const MIN_BEAKER_VERSION = '0.5.0'
 
 var commands = [
   initCmd,
-  coCmd,
+  cloneCmd,
   forkCmd,
   statusCmd,
   openCmd,
