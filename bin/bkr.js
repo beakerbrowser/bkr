@@ -76,6 +76,10 @@ function wrapCommand (obj) {
 
 // error output when no/invalid command is given
 function none (args) {
+  if (args.version) {
+    console.log(packageJson.version)
+    process.exit(0)
+  }
   var err = (args._[0]) ? `Invalid command: ${args._[0]}` : false
   usage(err)
 }
