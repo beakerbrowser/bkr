@@ -27,7 +27,7 @@ Publishing:
 
 Fetching:
 
-  clone <dat-url> [directory] - copy a dat into a dir
+  clone <dat-url> [--cached] [directory] - copy a dat into a dir
   pull [--live] [directory] - pull the latest version of a dat
 
 Open in beaker:
@@ -128,14 +128,14 @@ Effects:
 ### Clone
 
 ```
-bkr clone <dat-url> [directory]
+bkr clone <dat-url> [--cached] [directory]
 ```
 
 Check out a copy of a dat site into the given directory.
 If no directory is provided, it will use the current directory.
 
-Use this command to work on a site that you own, and have saved, or to simply get the files from a site you don't own.
-You can publish your changes with the `publish` command.
+If the archive is not yet downloaded into Beaker's internal cache, `bkr` will attempt to finish the download first.
+You can skip the download, and just clone what you have available, using `--cached`.
 
 ### Fork
 
