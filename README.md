@@ -21,7 +21,7 @@ Usage: bkr <command> [opts...]
 Publishing:
 
   init [directory] - create a new dat
-  fork <dat-url|directory> [directory] - create a new dat by copying
+  fork <dat-url|directory> [--cached] [directory] - create a new dat by copying
   status [directory] - check the change status of a dat
   publish [directory] - publish a new version of a dat
 
@@ -140,7 +140,7 @@ You can skip the download, and just clone what you have available, using `--cach
 ### Fork
 
 ```
-bkr fork <dat-url|directory> [directory]
+bkr fork <dat-url|directory> [--cached] [directory]
 ```
 
 Create a new dat site, using the given dat-url or directory as a template.
@@ -148,6 +148,9 @@ This is similar to running `bkr clone`, deleting the `dat.json`, then running `b
 
 If no second directory is given, it will use the current directory.
 You can fork a checked-out dat site in place by running `bkr fork .`.
+
+If the archive is not yet downloaded into Beaker's internal cache, `bkr` will attempt to finish the download first.
+You can skip the download, and just clone what you have available, using `--cached`.
 
 Effects:
 
