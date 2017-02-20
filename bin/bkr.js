@@ -16,7 +16,6 @@ import lsCmd from '../lib/commands/ls'
 import saveCmd from '../lib/commands/save'
 import unsaveCmd from '../lib/commands/unsave'
 
-import * as errorHandler from '../lib/error-handler'
 import usage from '../lib/usage'
 import { getClient } from '../lib/client'
 
