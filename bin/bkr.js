@@ -22,7 +22,7 @@ import { getClient } from '../lib/client'
 import packageJson from '../../package.json'
 
 const BKR_VERSION = packageJson.version
-const MIN_BEAKER_VERSION = '0.5.0'
+const MIN_BEAKER_VERSION = '0.6.1'
 
 // main
 // =
@@ -53,7 +53,7 @@ function wrapCommand (obj) {
     try {
       var beakerVersion = await getClient().hello(BKR_VERSION)
       if (!semver.valid(beakerVersion) || semver.lt(beakerVersion, MIN_BEAKER_VERSION)) {
-        throw `Beaker version is ${beakerVersion} and minimum required is ${MIN_BEAKER_VERSION}. Can you update your browser?`
+        throw `Beaker version is ${beakerVersion} and minimum required is ${MIN_BEAKER_VERSION}. Please update your browser!`
       }
       await innerCommand(...args)
     } catch (err) {
