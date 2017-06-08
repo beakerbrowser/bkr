@@ -1,5 +1,7 @@
 # bkr
 
+**DEPRECATED!** We improved how Beaker works with the OS (using the [staging area](https://beakerbrowser.com/docs/using-beaker/staging-area.html)) and we felt like it'd be better to simplify by removing bkr. Feel free to [complain here](https://github.com/beakerbrowser/bkr/issues/20) if you think we should reconsider!
+
 Beaker CLI tool.
 Clone, fork, develop, and publish P2P sites.
 
