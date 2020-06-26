@@ -4,7 +4,7 @@
   "version": "2.0.2",
   "description": "Beaker headless runtime for the hyper:// space network",
   "bin": {
-    "bkr": "./bin/bkr"
+    "bkr": "./bin/bkr.sh"
   },
   "scripts": {
     "start": "node ./bin/bkr",

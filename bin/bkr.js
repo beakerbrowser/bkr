@@ -4,26 +4,16 @@ import subcommand from 'subcommand'
 import fs from 'fs'
 import chalk from 'chalk'
 
-// import initCmd from '../lib/commands/init.js'
-// import forkCmd from '../lib/commands/fork.js'
-// import statusCmd from '../lib/commands/status.js'
-// import lsCmd from '../lib/commands/ls.js'
-// import saveCmd from '../lib/commands/save.js'
-// import unsaveCmd from '../lib/commands/unsave.js'
 import runCmd from '../lib/commands/run.js'
-
 import usage from '../lib/usage.js'
+
+import { VERSION } from 'hyper://coffeescript.org/browser-compiler-modern/coffeescript.js';
+console.log(VERSION)
 
 // main
 // =
 
 var commands = [
-  // initCmd,
-  // forkCmd,
-  // statusCmd,
-  // lsCmd,
-  // saveCmd,
-  // unsaveCmd
   runCmd
 ].map(wrapCommand)
 
