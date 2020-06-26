@@ -32,6 +32,8 @@
     "form-data": "^3.0.0",
     "fs-promise": "1.0.0",
     "gulp-chmod": "^2.0.0",
+    "hyperdrive": "git+https://github.com/hypercore-protocol/hyperdrive#hyperspace-port",
+    "hyperspace": "github:hyperspace-org/hyperspace#master",
     "inquirer": "^1.2.3",
     "jayson": "^2.0.2",
     "mkdirp": "^0.5.5",

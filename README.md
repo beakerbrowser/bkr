@@ -11,8 +11,11 @@ Command overview:
 ```bash
 Usage: bkr <command> [opts...]
 
-Execution:
+Commands:
 
-  run {js-path-or-hyper-url} [--app-data {path}] - run a script
+  server - Start the hyper:// server. Most other commands require this to be running.
+  run {js-path-or-hyper-url} - Run a script.
+
+  Learn more at https://github.com/beakerbrowser/bkr
 ```
 

@@ -5,16 +5,15 @@ import fs from 'fs'
 import chalk from 'chalk'
 
 import runCmd from '../lib/commands/run.js'
+import serverCmd from '../lib/commands/server.js'
 import usage from '../lib/usage.js'
-
-import { VERSION } from 'hyper://coffeescript.org/browser-compiler-modern/coffeescript.js';
-console.log(VERSION)
 
 // main
 // =
 
 var commands = [
-  runCmd
+  runCmd,
+  serverCmd
 ].map(wrapCommand)
 
 // match & run the command
