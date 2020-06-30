@@ -40,6 +40,7 @@
     "moment": "^2.17.0",
     "node-fetch": "^2.6.0",
     "node-localstorage": "^2.1.6",
+    "pauls-dat-api2": "^1.0.0",
     "pretty-bytes": "^4.0.2",
     "pretty-hash": "^1.0.1",
     "progress-string": "^1.2.1",
