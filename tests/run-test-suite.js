@@ -30,6 +30,25 @@ export async function ok (a, label = 'ok') {
   }
 }
 
+export async function throws (a, label = 'throws') {
+  try {
+    await a
+  } catch (e) {
+    console.log('✅', label)
+    return
+  }
+  console.log('❌', label)
+  throw new Error('Should have thrown')
+}
+
+export async function skip (label, v) {
+  try {
+    await v
+  } catch (e) {
+    console.log('SKIPPING:', label)
+  }
+}
+
 function assert (v, ...str) {
   if (!v) throw new Error(str.join(' '))
 }
